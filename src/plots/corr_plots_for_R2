@@ -1,0 +1,33 @@
+library(corrplot)
+## plotting the correlation of performance R2 of genes across models 
+
+# function to check the correlation of one file with the rest 
+cors <- function(file2){
+    d1 <- read.csv("/data/***/***/cell_model1.extra.csv")
+    d2 <- read.csv(file2)
+    row.names(d1) <- d1$gene
+    row.names(d2) <- d2$gene
+    ints <- intersect(d1$gene, d2$gene)
+    d11 <- d1[ints,]
+    d21 <- d2[ints,]
+    df <- data.frame(d1_R2=d11$pred.perf.R2, d2_R2=d21$pred.perf.R2)
+    res <- cor.test(df[,1], df[,2])
+    print(res[4])
+}
+
+# plotting using corrplot
+M <- read.csv("R2.cor.csv")
+row.names(M) <- M$X
+M <- M[-c(1)]
+M <- as.matrix(M)
+col <- colorRampPalette(c("#BB4444", "#EE9988", "#FFFFFF", "#77AADD", "#4477AA"))
+
+corrplot(M, method="color", col= colorRampPalette(c("white","lightpink", "#4477AA"))(10),  
+         type="upper", order="original", 
+         addCoef.col = "black",cl.lim=c(0,1), # Add coefficient of correlation
+         tl.col="black", tl.srt=45,
+         number.cex=0.7,#Text label color and rotation
+         # Combine with significance
+         #p.mat = p.mat, sig.level = 0.01, insig = "blank", 
+         # hide correlation coefficient on the principal diagonal
+         diag=FALSE)
