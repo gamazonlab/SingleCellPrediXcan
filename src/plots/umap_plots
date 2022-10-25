@@ -1,0 +1,80 @@
+## load in the libraries
+library(Seurat)
+library(SeuratData)
+library(SeuratDisk)
+library(irlba)
+library(ggplot2)
+library(dplyr)
+library(Matrix)
+library(uwot)
+library(RColorBrewer)   
+library(cowplot)
+
+## Convert h5ad to seurat
+Convert("./D11.log.norm.h5ad", dest= "h5seurat", assay = "RNA", overwrite = FALSE, verbose = TRUE) 
+
+## Load in the normalized seurat object 
+D11 <- LoadH5Seurat("./D11.log.norm.h5seurat", meta.data = FALSE, misc = FALSE)
+
+## Find highly variable genes - top 2000
+D11 <- FindVariableFeatures(D11, selection.method = "vst", nfeatures = 2000)
+
+## Scale the data so that the mean = 0 and var = 1, and extract the matrix from the seurat object
+all.genes <- rownames(D11)
+D11 <- ScaleData(D11, features = all.genes) # scale data 
+matrix <- D11[["RNA"]]@scale.data # extract the scaled matrix out 
+matrix[1:3, 1:3]
+
+## Do the PCA dimensional reduction - top 10 PCs - to get the continous PCs
+p1 <- prcomp_irlba(matrix, n=10) 
+hj <- as.data.frame(p1[4]) #Get the PCs that differentiate the cells 
+rownames(hj) <- rownames(as.data.frame(p1[5]))
+head(hj)
+
+## Map dimension reduction using umap
+umap_d52 <- umap(hj, n_neighbors = 30L, metric = "euclidean", min_dist = .1)
+umap_d52 <- as.data.frame(umap_d52)
+names(umap_d52) <- c('UMAP1', 'UMAP2')
+umap_d52 <- cbind(hj, umap_d52)
+
+## plotting the umap
+ggplot(umap_d11, aes(x=UMAP1, y=UMAP2)) + geom_point(colour="#CC79A7", size = 0.15) + theme_classic()
+
+## Colouring based on PCs 
+#PC1
+g <- ggplot(umap_d11, aes(x=UMAP1, y=UMAP2)) + geom_point(aes(colour=rotation.PC1), size = 0.25) +  theme_classic() 
+mid<-median(umap_d11$rotation.PC1)
+g <- g+scale_color_gradient2(midpoint=mid, low="blue", mid="white", high="darkgreen") + labs(color='PC1') + labs(x=NULL, y=NULL) + ggtitle('PC1') + theme(legend.position="none")
+
+#PC2 
+g2 <- ggplot(umap_d11, aes(x=UMAP1, y=UMAP2)) + geom_point(aes(colour=rotation.PC2), size = 0.25) +  theme_classic() 
+mid<-median(umap_d11$rotation.PC2)
+g2 <- g2 +scale_color_gradient2(midpoint=mid, low="blue", mid="white", high="darkgreen")+ labs(color='PC2') + labs(x=NULL, y=NULL) + ggtitle('PC2') + theme(legend.position="none")
+
+
+#PC3 
+g3 <- ggplot(umap_d11, aes(x=UMAP1, y=UMAP2)) + geom_point(aes(colour=rotation.PC3), size = 0.25) +  theme_classic() 
+mid<-median(umap_d11$rotation.PC3)
+g3 <- g3 +scale_color_gradient2(midpoint=mid, low="blue", mid="white", high="darkgreen")+ labs(color='PC3') + labs(x=NULL, y=NULL) + ggtitle('PC3') + theme(legend.position="none")
+
+
+#PC4 
+g4 <- ggplot(umap_d11, aes(x=UMAP1, y=UMAP2)) + geom_point(aes(colour=rotation.PC4), size = 0.25) +  theme_classic() 
+mid<-median(umap_d11$rotation.PC4)
+g4 <- g4 +scale_color_gradient2(midpoint=mid, low="blue", mid="white", high="darkgreen")+ labs(color='PC4') + labs(x=NULL, y=NULL) + ggtitle('PC4') + theme(legend.position="none")
+
+#PC5 
+g5 <- ggplot(umap_d11, aes(x=UMAP1, y=UMAP2)) + geom_point(aes(colour=rotation.PC5), size = 0.25) +  theme_classic() 
+mid<-median(umap_d11$rotation.PC5)
+g5 <- g5 +scale_color_gradient2(midpoint=mid, low="blue", mid="white", high="darkgreen")+ labs(color='PC5') + labs(x=NULL, y=NULL) + ggtitle('PC5') + theme(legend.position="none")
+
+#PC6 
+g6 <- ggplot(umap_d11, aes(x=UMAP1, y=UMAP2)) + geom_point(aes(colour=rotation.PC6), size = 0.25) +  theme_classic() 
+mid<-median(umap_d11$rotation.PC6)
+g6 <- g6 +scale_color_gradient2(midpoint=mid, low="blue", mid="white", high="darkgreen")+ labs(color='PC6') + labs(x=NULL, y=NULL) + ggtitle('PC6') + theme(legend.position="none")
+
+
+## plot them together for the first 6 PCs
+prow <- plot_grid(g, g2, g3,g4, g5, g6, align="hv")
+legend <- get_legend(g1 + theme(legend.box.margin = margin(0, 0, 0, 12)))
+plot_grid(prow, legend, rel_widths = c(3, .4)) # plotting the combined data with legend
