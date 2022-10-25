@@ -34,7 +34,7 @@ head(hj)
 
 ### load in the normalized data 
 
-d11 <- load("/gpfs52/data/g_gamazon_lab/abehd/Sc_MR/HipSci_iPSC_data/DA_neurons/raw_data/new_regressions/D11/normalized.d11.RData")
+d11 <- load("/gpfs52/data/****/ab***/****/***/D11/normalized.d11.RData")
 d11
 
 exp <- d11
@@ -60,14 +60,14 @@ library(data.table)
 
 # load in the residual expression data after regressing the effect of the PCs
 d11 <- load("PC_regressed_d11.RData")
-d11 # out put here will be 'expression'
+d11 # output here will be 'expression'
 
 
 exp1 <- expression[, 1:23986]
 exp1 <- as.data.frame(exp1)
 
 # read in the meta data that contains the samples and the cell annotation
-meta <- fread("/gpfs52/data/g_gamazon_lab/abehd/Sc_MR/HipSci_iPSC_data/DA_neurons/raw_data/meta_data/d11_meta.data.csv")
+meta <- fread("/gpfs52/data/****/ab***/****/***/D11/raw_data/meta_data/d11_meta.data.csv")
 exp1$sampels <- meta$donor_id
 
 # change to the long format 
@@ -83,4 +83,4 @@ dim(out1_wide)
 
 save(out_wide, "d11_pseudobulk.csv", row.names=F, quote=F)
 
-## next steps include quantile normalization, peer adjustment, and training the models
+## next steps include quantile normalization,peer_adjustment, and training models
