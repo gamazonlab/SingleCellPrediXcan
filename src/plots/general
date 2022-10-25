@@ -1,0 +1,26 @@
+library('ggplot2')
+
+# plotting for the three cell types that have more than one time points 
+tots <- read.csv("TOTZ.csv", h=T)
+p <- ggplot(tot, aes(sample.size, pred.perf.R2)) + geom_point(aes(colour=Time.point))
+p + facet_wrap(~Cell.Type) + xlab("sample size") + ylab(bquote('Prediction'~r^2)) + labs(fill='Time point')
+
+# plotting the entire sample size vs prediction r2
+
+p <- ggplot(hj, aes(sample.size, pred.perf.R2)) + geom_point(aes(colour=Time.point))
+p + xlab("sample size") + ylab(bquote('Prediction'~r^2)) + labs(fill='Time point') + theme_classic()
+
+
+# plotting the brain vs cell type
+png(file= "brain_vs_cell_zscore.png",  width= 3900, height=3000, res=300, type="cairo")
+p <- ggplot(tot, aes(cell_prediction.R2, pred_perf_r2)) + geom_point(aes(colour=status3), size=1)
+p2 <- p + facet_wrap(~tissue) + xlab(bquote('Cell Type Prediction'~R^2)) + ylab(bquote('GTEx Brain Tissue Prediction'~R^2)) + theme_bw()
+p2 + xlim(0, 0.6) + ylim(0, 0.6) + theme(strip.text = element_text(size = 8), legend.text=element_text(size=8)) + labs(color = 'SCZ TWAS result')
+dev.off()
+
+#
+png(file= "brain_vs_cell_zscore.png",  width= 3900, height=3000, res=300, type="cairo")
+p <- ggplot(tot, aes(Cell_zscore, zscore)) + geom_point(aes(colour=status3), size=1.5)
+p2 <- p + facet_wrap(~tissue) + xlab('Cell Type zscore') + ylab('GTEx Brain Tissue zscore') + theme_bw()
+p2 + theme(strip.text = element_text(size = 8), legend.text=element_text(size=8)) + labs(color = 'SCZ TWAS result')
+dev.off()
