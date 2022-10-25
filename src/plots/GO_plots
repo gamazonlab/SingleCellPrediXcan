@@ -1,0 +1,15 @@
+library(clusterProfiler)
+library(org.Hs.eg.db)
+
+df <- read.csv("GO.csv", h=T) #read in the gene ontology file with entrez gene id for each gene in cell type model 
+
+# convert to list -to input in clusterprofiler 
+ls <- list()
+ls$Astro <- as.character(Astro$entrez)
+ls$FPP <- as.character(fpp$entrez)
+ls$PFPP <- as.character(pfpp$entrez)
+
+x= compareCluster(ls, fun='enrichGO', OrgDb =org.Hs.eg.db )
+dotplot(x, showCategory=5)
+
+
