@@ -42,7 +42,7 @@ f <- function(inputg){
     perfor[i, "gene1_t1_coef"]  <- previous_inputg_coef
     y <- da52s[,inputg]
     x <- da30[,i]
-    z <- da30[,inputg]
+    z <- da30s[,inputg]
     perfor[i, "gene2_t1_beta"] <-  other_gene_coef*(sd(x)/sd(y)) # standardizing the coefficient
     perfor[i, "gene1_t1_beta"] <-  previous_inputg_coef*(sd(x)/sd(z)) # standardizing the coefficinet
     perfor[i,"gene1_day30"] <- inputg
