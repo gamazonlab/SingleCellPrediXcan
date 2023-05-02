@@ -45,8 +45,8 @@ f <- function(inputg){
     z <- da30s[,inputg]
     perfor[i, "gene2_t1_beta"] <-  other_gene_coef*(sd(x)/sd(y)) # standardizing the coefficient
     perfor[i, "gene1_t1_beta"] <-  previous_inputg_coef*(sd(x)/sd(z)) # standardizing the coefficinet
-    perfor[i,"gene1_day30"] <- inputg
-    perfor[i,"gene2_day52"] <- perfor[i,"genes"]
+    perfor[i,"gene1_day30"] <- perfor[i,"genes"]
+    perfor[i,"gene2_day52"] <- inputg
     perfor[i,"F-stat"] <- jj$fstatistic[1]
     g <- glance(model)
     perfor[i, "F-stat_pval"] <- g$p.value
