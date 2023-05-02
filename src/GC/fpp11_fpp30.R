@@ -1,4 +1,4 @@
-# This script further specifically does the GC for the schizophrenia associated genes using FPP30 cell models.
+# This script further specifically does the GC for the schizophrenia associated genes using FPP30 cell type models.
 # load library
 library(data.table)
 library(foreach)
