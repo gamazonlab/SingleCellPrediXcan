@@ -36,8 +36,8 @@ f <- function(inputg){
   for (i in 1:length(names(da30))) {
     model <- lm(da52s[,inputg] ~ as.matrix(da30s[,inputg]) + da30[,i])
     jj <-  summary(model)
-    other_gene_coef <- jj$coefficients[2]
-    previous_inputg_coef <- jj$coefficients[3]
+    previous_inputg_coef <- jj$coefficients[2]
+    other_gene_coef <- jj$coefficients[3]
     perfor[i,"gene2__t1_coef"] <- other_gene_coef
     perfor[i, "gene1_t1_coef"]  <- previous_inputg_coef
     y <- da52s[,inputg]
