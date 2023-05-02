@@ -35,10 +35,10 @@ f <- function(inputg){
   perfor <- as.data.frame(tf[,1:3])
   perfor$genes <- names(fpp11)
   for (i in 1:length(names(fpp11))) {
-    model <- lm(fpp30s[,inputg] ~ as.matrix(fpp11[,i]) + fpp11[,inputg])
+    model <- lm(fpp30s[,inputg] ~ as.matrix(fpp11s[,inputg]) + fpp11[,i])
     jj <-  summary(model)
-    other_gene_coef <- jj$coefficients[2]
-    previous_inputg_coef <- jj$coefficients[3]
+    previous_inputg_coef <- jj$coefficients[2]
+    other_gene_coef <- jj$coefficients[3]
     perfor[i,"gene2__t1_coef"] <- other_gene_coef
     perfor[i, "gene1_t1_coef"]  <- previous_inputg_coef
     y <-fpp30s[,inputg]
