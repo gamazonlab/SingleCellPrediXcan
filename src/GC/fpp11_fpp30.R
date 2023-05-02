@@ -1,4 +1,4 @@
-
+# This script further specifically does the GC for the schizophrenia associated genes using FPP30 cell models.
 # load library
 library(data.table)
 library(foreach)
@@ -7,8 +7,8 @@ library(tidyverse)
 library(broom)
 
 # read in the GReX files 
-fpp11 <- fread("/data/g_gamazon_lab/abehd/Sc_MR/HipSci_iPSC_data/DA_neurons/1kgp/Europeans/FPP11_eur.csv", h=T)
-fpp30 <- fread("/data/g_gamazon_lab/abehd/Sc_MR/HipSci_iPSC_data/DA_neurons/1kgp/Europeans/FPP30_eur.csv", h=T)
+fpp11 <- fread("/data/g_***/FPP11_eur.csv", h=T)
+fpp30 <- fread("/data/g_***/FPP30_eur.csv", h=T)
 
 # chage to data frames
 fpp11 <- as.data.frame(fpp11)
