@@ -6,8 +6,8 @@ library(tidyverse)
 library(broom)
 
 # read in the GReX files 
-epen30 <- fread("/data/g_gamazon_lab/abehd/Sc_MR/HipSci_iPSC_data/DA_neurons/1kgp/Europeans/Epen30_eur.csv", h=T)
-epen52 <- fread("/data/g_gamazon_lab/abehd/Sc_MR/HipSci_iPSC_data/DA_neurons/1kgp/Europeans/Epen52_eur.csv", h=T)
+epen30 <- fread("/data/***/Epen30_eur.csv", h=T)
+epen52 <- fread("/data/***/Epen52_eur.csv", h=T)
 
 # chage to data frames
 epen30 <- as.data.frame(epen30)
