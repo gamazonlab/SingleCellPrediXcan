@@ -34,7 +34,7 @@ f <- function(inputg){
   perfor <- as.data.frame(tf[,1:3])
   perfor$genes <- names(da30)
   for (i in 1:length(names(da30))) {
-    model <- lm(da52s[,inputg] ~ as.matrix(da30[,i]) + da30[,inputg])
+    model <- lm(da52s[,inputg] ~ as.matrix(da30s[,inputg]) + da30[,i])
     jj <-  summary(model)
     other_gene_coef <- jj$coefficients[2]
     previous_inputg_coef <- jj$coefficients[3]
