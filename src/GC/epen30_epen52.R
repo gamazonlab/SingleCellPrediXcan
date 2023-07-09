@@ -9,7 +9,7 @@ library(broom)
 epen30 <- fread("/data/***/Epen30_eur.csv", h=T)
 epen52 <- fread("/data/***/Epen52_eur.csv", h=T)
 
-# chage to data frames
+# change to data frames
 epen30 <- as.data.frame(epen30)
 epen52 <- as.data.frame(epen52)
 
