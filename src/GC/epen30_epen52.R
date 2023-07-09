@@ -58,7 +58,7 @@ f <- function(inputg){
 # apply to all genes
 genes <- colnames(epen52s)
 genes <- as.list(genes)
-t1 <- lapply(gez, f)
+t1 <- lapply(genes, f)
 lml<- plyr::ldply(t, rbind)
 lml2 <- as.matrix(lml)
 write.csv(lml2, "./bi_var_epen30_52.csv", row.names=F, quote=F)
