@@ -16,3 +16,7 @@ Eric R. Gamazon ericgamazon@gmail.com<br>
 
 Code being maintained by:<br>
 Hanna Abe abehanna1@gmail.com
+
+## Using this resource
+
+### Application of models to GWAS summary data
