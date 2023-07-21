@@ -2,7 +2,6 @@
 
 # References 
 
----
 Mapping the landscape of lineage-specific dynamic regulation of gene expression using single-cell transcriptomics and application to genetics of complex disease
 
 Hanna Abe<sup>1</sup>,Phillip Lin<sup>2</sup>, Dan Zhou<sup>2</sup>, Douglas Ruderfer<sup>2,3</sup>, Eric R. Gamazon<sup>2,3
