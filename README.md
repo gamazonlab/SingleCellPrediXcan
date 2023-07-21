@@ -23,7 +23,8 @@ Hanna Abe abehanna1@gmail.com
 The cell type and cell state adjusted prediction models are available on Zenodo at (to be provided up on publication). Pre-trained tissue-specific PrediXcan gene expression models leveraged here are available for download from the JTI repository (https://doi.org/10.5281/zenodo.3842289).
 
 ### Application of models to GWAS summary data 
-To apply the cell type prediction models to a GWAS summary statistics and get TWAS results, we use a method that has been developed by Barbeira et al, 2018, S-PrediXcan (https://github.com/hakyimlab/MetaXcan/blob/master/software/SPrediXcan.py).Reference: Barbeira, Alvaro N., et al. "Exploring the phenotypic consequences of tissue specific gene expression variation inferred from GWAS summary statistics." Nature communications 9.1 (2018): 1-20. (https://www.nature.com/articles/s41467-018-03621-1)
+To apply the cell type prediction models to a GWAS summary statistics and get TWAS results, we use a method that has been developed by Barbeira et al, 2018, S-PrediXcan (https://github.com/hakyimlab/MetaXcan/blob/master/software/SPrediXcan.py).<br>
+Reference: Barbeira, Alvaro N., et al. "Exploring the phenotypic consequences of tissue specific gene expression variation inferred from GWAS summary statistics." Nature communications 9.1 (2018): 1-20. (https://www.nature.com/articles/s41467-018-03621-1)
 
 
 ### PheWAS using cell type application to UKBB
