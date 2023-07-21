@@ -19,7 +19,12 @@ Hanna Abe abehanna1@gmail.com
 
 ## Using this resource
 
-### Application of models to GWAS summary data
+## Application of models to GWAS summary data
+---
+### Download prediction models <br>
+The cell type and cell state adjusted prediction models are available on Zenodo at (to be provided up on publication). Pre-trained tissue-specific PrediXcan gene expression models leveraged here are available for download from the JTI repository (https://doi.org/10.5281/zenodo.3842289).
+
+### 
 
 ### PheWAS using cell type application to UKBB
 ---
