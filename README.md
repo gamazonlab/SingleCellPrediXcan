@@ -22,3 +22,6 @@ Hanna Abe abehanna1@gmail.com
 ### Application of models to GWAS summary data
 
 ### PheWAS using cell type application to UKBB
+---
+How to install the R package <br>
+R CMD INSTALL sctwas_0.2.0_R_x86_64-pc-linux-gnu.tar.gz
