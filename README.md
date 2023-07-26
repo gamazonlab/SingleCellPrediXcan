@@ -33,7 +33,7 @@ We have applied our cell type models to > 4000 GWAS summary statistics in the UK
 
 ### TUTORIAL
 Install the R package <br>
-R CMD INSTALL sctwas_0.2.0_R_x86_64-pc-linux-gnu.tar.gz
+R CMD INSTALL sctwas_0.3.0_R_x86_64-pc-linux-gnu.tar.gz
 
 ```R
 library(sctwas)
