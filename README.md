@@ -45,3 +45,7 @@ data <- getGraphDatav2(geneNames=c("CHRNA3", "ARL17B", "HYI"), cellTypeId= "FPP"
 phewas_manhattan(data, cellTypeId="FPP", timePoint="D11")
 
 ```
+
+The function above returned the following figure. 
+![phewas](https://github.com/gamazonlab/SingleCellPrediXcan/assets/59617853/44cb12c4-f1a4-4162-8cff-5193b099753e)
+
