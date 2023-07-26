@@ -47,7 +47,7 @@ phewas_manhattan(data, cellTypeId="FPP", timePoint="D11")
 
 ```
 
-The function above returned the following figure. The x-axis is the groups of phenotypes in the UKBB, y-axis is -log10(TWAS pvalue). This figure shows the results from the application of the FPP cell type model to the GWAS summary stats. 
+The function above returned the following figure. The x-axis is the groups of phenotypes in the UKBB, y-axis is -log10(TWAS pvalue). The function labels only those associations that pass the multiple testing treshold.This figure shows the results from the application of the FPP cell type model to the GWAS summary stats. 
 
 ![phewas](https://github.com/gamazonlab/SingleCellPrediXcan/assets/59617853/44cb12c4-f1a4-4162-8cff-5193b099753e)
 
