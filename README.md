@@ -29,10 +29,10 @@ Reference: Barbeira, Alvaro N., et al. "Exploring the phenotypic consequences of
 
 ### PheWAS using cell type prediction model application to UKBB
 ---
-We have applied our cell type models to > 4000 GWAS summary statistics in the UKBB. The R package below performs PheWAS using the UKBB associaitions. Given a gene or multiple genes, the package will return signficant associations (those that pass the multiple testing correction) and returns a PheWAS plot. If the gene is not imputed in any cell type model, it will not return any output.
+We have applied our cell type models to > 4000 GWAS summary statistics in the UKBB. The R package below performs PheWAS using the UKBB associaitions. Given a gene or multiple genes, the package will return signficant associations (those that pass the multiple testing correction) and returns a PheWAS plot. If the gene is not imputed in any cell type model, it will not return any output.Please refer to the src folder above to see details about package and list of available iGenes and cell type models. 
 
 ### TUTORIAL
-Install the R package. Please refer to the src folder above to see details about package and list of available iGenes and cell type models. <br>
+Install the R package. <br>
 
 R CMD INSTALL sctwas_0.3.0_R_x86_64-pc-linux-gnu.tar.gz
 
