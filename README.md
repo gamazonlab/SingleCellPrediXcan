@@ -29,7 +29,7 @@ Reference: Barbeira, Alvaro N., et al. "Exploring the phenotypic consequences of
 
 ### PheWAS using cell type prediction model application to UKBB
 ---
-We have applied our cell type models to > 1000 GWAS summary statistics in the UKBB. The R package below performs PheWAS using the UKBB associaitions. Given a gene or multiple genes, the package will return signficant associations (those that pass the multiple testing correction) and returns a PheWAS plot. If the gene is not imputed in any cell type model, it will not return any output.Please refer to the src folder above to see details about package and list of available iGenes and cell type models. 
+We have applied our cell type models to > 1000 GWAS summary statistics in the UKBB. The R package below performs PheWAS using the UKBB associaitions. Given a gene or multiple genes, the package will return signficant associations (those that pass the multiple testing correction) and returns a PheWAS plot. If the gene is not imputed in any cell type model, it will not return any output. Please refer to the src folder above to see details about package and list of available iGenes and cell type models. 
 
 ### TUTORIAL
 Install the R package. <br>
@@ -47,7 +47,7 @@ phewas_manhattan(data, cellTypeId="FPP", timePoint="D11")
 
 ```
 
-The function above returned the following figure. The x-axis is the groups of phenotypes in the UKBB, y-axis is -log10(TWAS pvalue). The function labels only those associations that pass the multiple testing treshold.This figure shows the results from the application of the FPP cell type model to the GWAS summary stats. 
+The function above returned the following figure. The x-axis shows the class of phenotypes in the UKBB, y-axis is -log10(TWAS pvalue). The function labels only those associations that pass the multiple testing treshold. This figure shows the results from the application of the FPP cell type model to the GWAS summary statistics. 
 
 ![phewas](https://github.com/gamazonlab/SingleCellPrediXcan/assets/59617853/44cb12c4-f1a4-4162-8cff-5193b099753e)
 
