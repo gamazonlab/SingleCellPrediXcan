@@ -20,7 +20,7 @@ Hanna Abe abehanna1@gmail.com
 ## Using this resource
 
 ### Download prediction models <br>
-The cell type and cell state adjusted prediction models are available on Zenodo at (to be provided up on publication). Pre-trained tissue-specific PrediXcan gene expression models leveraged here are available for download from the JTI repository (https://doi.org/10.5281/zenodo.3842289).
+The cell type and cell state adjusted prediction models are available on Zenodo at (https://doi.org/10.5281/zenodo.12869695). Pre-trained tissue-specific PrediXcan gene expression models leveraged here are available for download from the JTI repository (https://doi.org/10.5281/zenodo.3842289).
 
 ### Application of models to GWAS summary data 
 To apply the cell type prediction models to a GWAS summary statistics and get TWAS results, we use a method that has been developed by Barbeira et al, 2018, S-PrediXcan (https://github.com/hakyimlab/MetaXcan/blob/master/software/SPrediXcan.py).<br>
