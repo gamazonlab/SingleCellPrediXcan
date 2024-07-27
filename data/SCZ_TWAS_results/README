@@ -1,4 +1,4 @@
-We have included here the output of TWAS results from the application of SCZ GWAS summary statistics to single cell genetic models. 
+We have included here the output of TWAS results from the application of single cell genetic models to SCZ GWAS summary statistics. 
 FPP = Floorplate progenitors, 
 PFPP = Proliferating floorplate progenitors, 
 NB= Neuroblasts, 
@@ -9,6 +9,6 @@ Astro = Astrocyte -like cell types,
 Neur1 = Neurons.
 
 Time points
-D11 = day11, 
+D11 = day 11, 
 D30 = day 30, 
 D52 = day 52
