@@ -31,7 +31,7 @@ The cell type and cell state adjusted prediction models are available on Zenodo 
     https://github.com/gamazonlab/MR-JTI/blob/master/model_training/predixcan/src/run.sh (lines 31-48) <br>
     https://github.com/gamazonlab/MR-JTI/blob/master/model_training/predixcan/src/predixcan_r.r <br>
 
-3) To apply the cell type prediction models to individual level genotype data, please refer to the following tutorial <br>
+2) To apply the cell type prediction models to individual level genotype data, please refer to the following tutorial <br>
    - https://github.com/hakyimlab/MetaXcan/wiki/Individual-level-PrediXcan:-introduction,-tutorials-and-manual
   
 
