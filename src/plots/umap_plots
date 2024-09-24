@@ -32,10 +32,10 @@ rownames(hj) <- rownames(as.data.frame(p1[5]))
 head(hj)
 
 ## Map dimension reduction using umap
-umap_d52 <- umap(hj, n_neighbors = 30L, metric = "euclidean", min_dist = .1)
-umap_d52 <- as.data.frame(umap_d52)
-names(umap_d52) <- c('UMAP1', 'UMAP2')
-umap_d52 <- cbind(hj, umap_d52)
+umap_d11 <- umap(hj, n_neighbors = 30L, metric = "euclidean", min_dist = .1)
+umap_d11 <- as.data.frame(umap_d52)
+names(umap_d11) <- c('UMAP1', 'UMAP2')
+umap_d11 <- cbind(hj, umap_d11)
 
 ## plotting the umap
 ggplot(umap_d11, aes(x=UMAP1, y=UMAP2)) + geom_point(colour="#CC79A7", size = 0.15) + theme_classic()
