@@ -17,6 +17,8 @@ Eric R. Gamazon ericgamazon@gmail.com<br>
 Code being maintained by:<br>
 Hanna Abe abehanna1@gmail.com
 
+[Link to paper](https://doi.org/10.1016/j.xhgg.2024.100397)
+
 ## Using this resource
 
 ### Download prediction models <br>
